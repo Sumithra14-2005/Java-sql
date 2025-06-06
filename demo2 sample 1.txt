@@ -1,0 +1,18 @@
+package Arrayconcepts;
+
+public class Demo2 {
+	public static void inputs(String name, String job,String pakage) {
+		System.out.println("Hai"+""+name+""+job+""+""+pakage);
+		
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+inputs("john","developer","4LPA");
+inputs("hari","Developer","4LPA");
+
+
+	}
+
+}
