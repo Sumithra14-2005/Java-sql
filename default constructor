@@ -1,0 +1,16 @@
+package vowelsconcept;
+
+public class defaultconstructor {
+	defaultconstructor() {
+		System.out.println("Default Constructor");
+	}
+public static void main(String[] args) {
+	//to create object
+	//classname refernce variable=new calssname();
+	defaultconstructor ref=new defaultconstructor();
+	
+
+	}
+
+}
+             
