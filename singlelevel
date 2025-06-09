@@ -1,0 +1,24 @@
+package vowelsconcept;
+
+public class singlelevel {
+void message() {
+	System.out.println("sending!!!!");
+}
+
+}
+class subclass extends singlelevel{
+	void view() {
+	System.out.println("Recevied......");
+	}
+	
+}
+class main{
+	public static void main(String[] args) {
+	subclass ref=new subclass();
+	ref.message();
+	ref.view();
+	
+
+	}
+
+}
