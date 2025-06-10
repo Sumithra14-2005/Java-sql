@@ -1,0 +1,46 @@
+package programs;
+class Student{
+	private String Name;
+	private int Mark;
+	Student(String Name,int Mark){
+		this.Name=Name;
+		}
+	public String getName() {
+		return Name;
+		
+	}
+	public int getMark() {
+		return Mark;
+		
+	}
+	public void getResult(int Mark) {
+		if(Mark>0) {
+			Mark+=Mark;
+			System.out.println("Result:"+Mark);
+			
+}}
+	public void setName(String Name) {
+		this.Name=Name;
+		
+	}
+	public void setMark(int Mark) {
+		this.Mark=Mark;
+		
+		
+		
+	}
+public class Mark {
+	public static void main(String[] args) {
+		Student ac=new Student("john",400);
+		System.out.println("Student Name:"+ac.getName());
+		
+		ac.setMark(400);
+		System.out.println("Mark:"+ac.getMark());
+		
+		
+		
+	}
+
+	}
+
+}
