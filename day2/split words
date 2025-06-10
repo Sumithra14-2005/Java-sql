@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Task3_Splitwords{
+public static vloid main(String[]args){
+Scanner sc=new Scanner(Sysrtem.in);
+system.out.println("enter the sentences:");
+String sentences=sc.nextLine();
+
+String[]words=sentences.split("//s+");
+System.out.println("Words in sentence:");
+for(String word:words){
+system.out.println(word);
+}
+}
+}
