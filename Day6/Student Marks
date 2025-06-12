@@ -1,0 +1,22 @@
+package mainprograms;
+import java.util.HashMap;
+import java.util.Map;
+public class Main {
+    public static void main(String[] args) {
+        HashMap<String,Integer>studentMarks=new HashMap<>();
+        studentMarks.put("Sumithra",400);
+        studentMarks.put("Haris",400);
+        studentMarks.put("Trish",400);
+        int totalMarks=0;
+        for(int marks:studentMarks.values()){
+            totalMarks+=marks;
+        
+    }
+    System.out.println("student total Marks:"+totalMarks);
+double average=totalMarks /studentMarks.size();
+        System.out.println("student AvereageMark:"+average);
+for(Map.Entry<String,Integer> entry : studentMarks.entrySet()){
+            System.out.println(entry.getKey()+""+entry.getValue());
+        }
+    }
+    }
