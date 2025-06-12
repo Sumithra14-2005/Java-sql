@@ -1,0 +1,31 @@
+package program;
+
+public class MultiThread {
+	private String Name;
+		MultiThread(String Name){
+			this.Name=Name;
+		}
+		public void run() {
+			for(int i=1;i<=5;i++) {
+				System.out.println(Name);
+				try {
+					Thread.sleep(500);
+				}
+				catch (InterruptedException e) {
+					
+				}
+			}
+		
+	
+		class Execute{
+			public static void main(String[]args) {
+				MultiThread m1=new MultiThread("Thread-1");
+				MultiThread m2=new MultiThread("Thread-2");
+				m1.start();
+				m2.start();
+				
+			}
+		}
+
+	
+		
