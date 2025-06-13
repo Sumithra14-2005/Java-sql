@@ -6,11 +6,11 @@ class StudentManage {
        HashMap<Integer,String> StudentManage=new HashMap<>();
        //accepts all types of values
        ArrayList<Object> arr=new ArrayList<>();
-        arr.add("Hemamalini");
-        arr.add("Rohini");
-        arr.add("Priya");
+        arr.add("Sumithra");
+        arr.add("Trishi");
+        arr.add("Gopika");
         arr.add("Hari");
-        arr.add("Dharshini");
+        arr.add("Moni");
         StudentManage.put(2321,"BCA");
         StudentManage.put(2322,"B.SC(CS)");
         StudentManage.put(2323,"B.SC(IT)");
@@ -19,19 +19,19 @@ class StudentManage {
         System.out.println(arr);
         System.out.println(StudentManage);
        // add
-        arr.add("Gayathri");
+        arr.add("Santa");
         arr.add("Kashini");
         
         System.out.println("After adding elements: " + arr);
         //search
-       String searchItem = "Ranjitha";
+       String searchItem = "megal";
         if (arr.contains(searchItem)) {
             System.out.println(searchItem + " is found in the Studentslist.");
         } else {
             System.out.println(searchItem + " is not found in the Studentslist.");
         }
         //delete
-        String deleteItem = "Gayathri";
+        String deleteItem = "Santa";
         if (arr.remove(deleteItem)) {
             System.out.println(deleteItem + " removed from the Studentlist.");
         } else {
