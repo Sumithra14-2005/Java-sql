@@ -1,0 +1,507 @@
+Microsoft Windows [Version 10.0.19045.2130]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>my sql -u root -p
+'my' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -u root -p
+Enter password: *********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.37 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create table emp;
+ERROR 1046 (3D000): No database selected
+mysql> create databases emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'databases emp' at line 1
+mysql> create databases
+    -> emp
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'databases
+emp' at line 1
+mysql> create database emp;
+Query OK, 1 row affected (0.05 sec)
+
+mysql> show database ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| company            |
+| emp                |
+| empdt              |
+| information_schema |
+| kgisl              |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+10 rows in set (0.01 sec)
+
+mysql> use emp;
+Database changed
+mysql> create table employee;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create table employee;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create table employee
+    -> empid int,
+    -> name varchar(25),
+    -> dept varchar(25),
+    -> Salary int,
+    -> joindate Date;\
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'empid int,
+name varchar(25),
+dept varchar(25),
+Salary int,
+joindate Date' at line 2
+mysql> create table employee;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create table employee
+    -> empid int,
+    ->     -> name varchar(25),
+    ->     -> dept varchar(25),
+    ->     -> Salary int,
+    ->     -> joindate Date
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'empid int,
+    -> name varchar(25),
+    -> dept varchar(25),
+    -> Salary int,
+' at line 2
+mysql> use kgisl
+Database changed
+mysql> create table employee(
+    -> empid INT PRIMARY KEY,
+    -> name varchar(25),
+    -> dept varchar(25),
+    -> salary INT,
+    -> joindate DATE
+    -> );
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> desc employee;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| empid    | int         | NO   | PRI | NULL    |       |
+| name     | varchar(25) | YES  |     | NULL    |       |
+| dept     | varchar(25) | YES  |     | NULL    |       |
+| salary   | int         | YES  |     | NULL    |       |
+| joindate | date        | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+5 rows in set (0.04 sec)
+
+mysql> INSERT INTO employee(empid,name,dept,salary,joindate)VALUES
+    -> (1,sumi,finance,5000,2023-03-12),
+    -> (2,Hari,Marketing,4000,2023-03-13),
+    -> (3,Trish,finance,4100,2023-03-09),
+    -> (4,Shabari,Marketing,4000,2023-02-04),
+    -> (5,Sai,Marketing,6000,2023-02-08),
+    -> (5,Gopi,Marketing,2000,2023-02-03),
+    -> (7,Santa,Marketing,3400,2023-02-01),
+    -> (8,Meg,Marketing,3400,2023-02-08),
+    -> (9,Kash,Marketing,3400,2023-02-16),
+    -> (10,karthi,Marketing,4400,2023-02-15),
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 11
+mysql> INSERT INTO employee(empid,name,dept,salary,joindate)VALUES
+    -> (1,'sumi','finance',5000,2023-03-12),
+    -> (2,'Hari','Marketing',4000,2023-03-13),
+    -> (3,'Trish','finance',4100,2023-03-09),
+    -> (4,'Shabari','Marketing',4000,2023-02-04),
+    -> (5,'Gopi','Marketing',2000,2023-02-03),
+    -> (6,'Sai','Marketing',6000,2023-02-08),
+    -> (7,'Santa','Marketing',3400,2023-02-01),
+    -> (8,'Meg','Marketing',3400,2023-02-08),
+    -> (9,'Kash','Marketing',3400,2023-02-16),
+    -> (10,'karthi','Marketing',4400,2023-02-15),
+    -> )=;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')=' at line 12
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> INSERT INTO employee(empid,name,dept,salary,joindate)VALUES
+    -> (1,'sumi','finance',5000,2023-03-12),
+    ->      (2,'Hari','Marketing',4000,2023-03-13),
+    ->      (3,'Trish','finance',4100,2023-03-09),
+    ->      (4,'Shabari','Marketing',4000,2023-02-04),
+    ->      (5,'Gopi','Marketing',2000,2023-02-03),
+    ->      (6,'Sai','Marketing',6000,2023-02-08),
+    ->      (7,'Santa','Marketing',3400,2023-02-01),
+    ->      (8,'Meg','Marketing',3400,2023-02-08),
+    ->      (9,'Kash','Marketing',3400,2023-02-16),
+    ->      (10,'karthi','Marketing',4400,2023-02-15),
+    ->      ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 11
+mysql> INSERT INTO employee(empid,name,dept,salary,joindate)VALUES
+    -> (1,'sumi','finance',5000,2023-03-12),
+    ->      (2,'Hari','Marketing',4000,2023-03-13),
+    ->      (3,'Trish','finance',4100,2023-03-09),
+    ->      (4,'Shabari','Marketing',4000,2023-02-04),
+    ->      (5,'Gopi','Marketing',2000,2023-02-03),
+    ->      (6,'Sai','Marketing',6000,2023-02-08),
+    ->      (7,'Santa','Marketing',3400,2023-02-01),
+    ->      (8,'Meg','Marketing',3400,2023-02-08),
+    ->      (9,'Kash','Marketing',3400,2023-02-16),
+    ->      (10,'karthi','Marketing',4400,2023-02-15)
+    ->      ;
+ERROR 1292 (22007): Incorrect date value: '2008' for column 'joindate' at row 1
+mysql> INSERT INTO employee(empid,name,dept,salary,joindate)VALUES
+    ->  (1,'sumi','finance',5000,2023-03-12),
+    ->      (2,'Hari','Marketing',4000,2023-03-13),
+    ->      (3,'Trish','finance',4100,2023-03-09),
+    ->      (4,'Shabari','Marketing',4000,2023-02-04),
+    ->      (5,'Gopi','Marketing',2000,2023-02-03),
+    ->      (6,'Sai','Marketing',6000,2023-02-08),
+    ->      (7,'Santa','Marketing',3400,2023-02-01),
+    ->      (8,'Meg','Marketing',3400,2023-02-08),
+    ->      (9,'Kash','Marketing',3400,2023-02-16),
+    ->      (10,'karthi','Marketing',4400,2023-02-15);
+ERROR 1292 (22007): Incorrect date value: '2008' for column 'joindate' at row 1
+mysql> INSERT INTO employee(empid,name,dept,salary,joindate)VALUES
+    -> (1,'sumi','finance',5000,2023-03-12),
+    ->      (2,'Hari','Marketing',4000,2023-03-13),
+    ->      (3,'Trish','finance',4100,2023-03-09),
+    ->      (4,'Shabari','Marketing',4000,2023-02-04),
+    ->      (5,'Gopi','Marketing',2000,2023-02-03),
+    ->      (6,'Sai','Marketing',6000,2023-02-08),
+    ->      (7,'Santa','Marketing',3400,2023-02-01),
+    ->      (8,'Meg','Marketing',3400,2023-02-08),
+    ->      (9,'Kash','Marketing',3400,2023-02-16),
+    -> (10,'karthi','Marketing',4400,2023-02-15);
+ERROR 1292 (22007): Incorrect date value: '2008' for column 'joindate' at row 1
+mysql> create database empl;
+Query OK, 1 row affected (0.05 sec)
+
+mysql> show databaes;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'databaes' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| company            |
+| emp                |
+| empdt              |
+| empl               |
+| information_schema |
+| kgisl              |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+11 rows in set (0.00 sec)
+
+mysql> use empl;
+Database changed
+mysql> create a table emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'a table emp' at line 1
+mysql>  create table employee(
+    ->     -> empid INT PRIMARY KEY,
+    ->     -> name varchar(25),
+    ->     -> dept varchar(25),
+    ->     -> salary INT,
+    ->     -> joindate DATE
+    ->     -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> empid INT PRIMARY KEY,
+    -> name varchar(25),
+    -> dept varchar(25),
+    ' at line 2
+mysql> create table employee(
+    ->     -> empid INT PRIMARY KEY,
+    ->     -> name varchar(25),
+    ->     -> dept varchar(25),
+    ->     -> salary INT,
+    ->     -> joindate DATE
+    ->     -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-> empid INT PRIMARY KEY,
+    -> name varchar(25),
+    -> dept varchar(25),
+    ' at line 2
+mysql> create table employee(
+    ->     empid INT PRIMARY KEY,
+    ->      name varchar(25),
+    ->      dept varchar(25),
+    ->      salary INT,
+    ->     joindate DATE
+    ->     );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> INSERT INTO employee(empid,name,dept,salary,joindate)VALUES
+    -> (1,'sumi','finance',5000,'2023-03-12'),
+    ->      (2,'Hari','Marketing',4000,'2023-03-13'),
+    ->      (3,'Trish','finance',4100,'2023-03-09'),
+    ->      (4,'Shabari','Marketing',4000,'2023-02-04'),
+    ->      (5,'Gopi','Marketing',2000,'2023-02-03'),
+    ->      (6,'Sai','Marketing',6000,'2023-02-08'),
+    ->      (7,'Santa','Marketing',3400,'2023-02-01'),
+    ->      (8,'Meg','Marketing',3400,'2023-02-08'),
+    ->      (9,'Kash','Marketing',3400,'2023-02-16'),
+    ->      (10,'karthi','Marketing',4400,'2023-02-15');
+Query OK, 10 rows affected (0.04 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> select * from employee;
++-------+---------+-----------+--------+------------+
+| empid | name    | dept      | salary | joindate   |
++-------+---------+-----------+--------+------------+
+|     1 | sumi    | finance   |   5000 | 2023-03-12 |
+|     2 | Hari    | Marketing |   4000 | 2023-03-13 |
+|     3 | Trish   | finance   |   4100 | 2023-03-09 |
+|     4 | Shabari | Marketing |   4000 | 2023-02-04 |
+|     5 | Gopi    | Marketing |   2000 | 2023-02-03 |
+|     6 | Sai     | Marketing |   6000 | 2023-02-08 |
+|     7 | Santa   | Marketing |   3400 | 2023-02-01 |
+|     8 | Meg     | Marketing |   3400 | 2023-02-08 |
+|     9 | Kash    | Marketing |   3400 | 2023-02-16 |
+|    10 | karthi  | Marketing |   4400 | 2023-02-15 |
++-------+---------+-----------+--------+------------+
+10 rows in set (0.00 sec)
+
+mysql> select * from employee where
+    -> dept=finance;
+ERROR 1054 (42S22): Unknown column 'finance' in 'where clause'
+mysql> select * from employee where
+    -> dept='finance';
++-------+-------+---------+--------+------------+
+| empid | name  | dept    | salary | joindate   |
++-------+-------+---------+--------+------------+
+|     1 | sumi  | finance |   5000 | 2023-03-12 |
+|     3 | Trish | finance |   4100 | 2023-03-09 |
++-------+-------+---------+--------+------------+
+2 rows in set (0.00 sec)
+
+mysql> update employee
+    -> set dept=webdevelopment
+    -> where dept = 9;
+ERROR 1054 (42S22): Unknown column 'webdevelopment' in 'field list'
+mysql> update employee
+    -> set dept='webdevelopment'
+    -> where dept = 9;
+ERROR 1292 (22007): Truncated incorrect DOUBLE value: 'finance'
+mysql> update employee set dept ='finance' where name ='Kash';
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select *from employee;
++-------+---------+-----------+--------+------------+
+| empid | name    | dept      | salary | joindate   |
++-------+---------+-----------+--------+------------+
+|     1 | sumi    | finance   |   5000 | 2023-03-12 |
+|     2 | Hari    | Marketing |   4000 | 2023-03-13 |
+|     3 | Trish   | finance   |   4100 | 2023-03-09 |
+|     4 | Shabari | Marketing |   4000 | 2023-02-04 |
+|     5 | Gopi    | Marketing |   2000 | 2023-02-03 |
+|     6 | Sai     | Marketing |   6000 | 2023-02-08 |
+|     7 | Santa   | Marketing |   3400 | 2023-02-01 |
+|     8 | Meg     | Marketing |   3400 | 2023-02-08 |
+|     9 | Kash    | finance   |   3400 | 2023-02-16 |
+|    10 | karthi  | Marketing |   4400 | 2023-02-15 |
++-------+---------+-----------+--------+------------+
+10 rows in set (0.00 sec)
+
+mysql> rename table  employee to empdetails;
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> select * from empdetails;
++-------+---------+-----------+--------+------------+
+| empid | name    | dept      | salary | joindate   |
++-------+---------+-----------+--------+------------+
+|     1 | sumi    | finance   |   5000 | 2023-03-12 |
+|     2 | Hari    | Marketing |   4000 | 2023-03-13 |
+|     3 | Trish   | finance   |   4100 | 2023-03-09 |
+|     4 | Shabari | Marketing |   4000 | 2023-02-04 |
+|     5 | Gopi    | Marketing |   2000 | 2023-02-03 |
+|     6 | Sai     | Marketing |   6000 | 2023-02-08 |
+|     7 | Santa   | Marketing |   3400 | 2023-02-01 |
+|     8 | Meg     | Marketing |   3400 | 2023-02-08 |
+|     9 | Kash    | finance   |   3400 | 2023-02-16 |
+|    10 | karthi  | Marketing |   4400 | 2023-02-15 |
++-------+---------+-----------+--------+------------+
+10 rows in set (0.00 sec)
+
+mysql> alter table empdetails
+    -> rename column dept to designation;
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from empetails;
+ERROR 1146 (42S02): Table 'empl.empetails' doesn't exist
+mysql> select * from empdetails;
++-------+---------+-------------+--------+------------+
+| empid | name    | designation | salary | joindate   |
++-------+---------+-------------+--------+------------+
+|     1 | sumi    | finance     |   5000 | 2023-03-12 |
+|     2 | Hari    | Marketing   |   4000 | 2023-03-13 |
+|     3 | Trish   | finance     |   4100 | 2023-03-09 |
+|     4 | Shabari | Marketing   |   4000 | 2023-02-04 |
+|     5 | Gopi    | Marketing   |   2000 | 2023-02-03 |
+|     6 | Sai     | Marketing   |   6000 | 2023-02-08 |
+|     7 | Santa   | Marketing   |   3400 | 2023-02-01 |
+|     8 | Meg     | Marketing   |   3400 | 2023-02-08 |
+|     9 | Kash    | finance     |   3400 | 2023-02-16 |
+|    10 | karthi  | Marketing   |   4400 | 2023-02-15 |
++-------+---------+-------------+--------+------------+
+10 rows in set (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| company            |
+| emp                |
+| empdt              |
+| empl               |
+| information_schema |
+| kgisl              |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+11 rows in set (0.00 sec)
+
+mysql> drop database sakila;
+Query OK, 23 rows affected (0.40 sec)
+
+mysql> shoe databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'shoe databases' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| company            |
+| emp                |
+| empdt              |
+| empl               |
+| information_schema |
+| kgisl              |
+| mysql              |
+| performance_schema |
+| sys                |
+| world              |
++--------------------+
+10 rows in set (0.00 sec)
+
+mysql> truncate table empid;
+ERROR 1146 (42S02): Table 'empl.empid' doesn't exist
+mysql> truncate column empid;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'column empid' at line 1
+mysql> delete from empdetails
+    -> where column name= empid;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'column name= empid' at line 2
+mysql> delete from empdetails
+    -> where empid= 5;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select *from
+    -> empdetails;
++-------+---------+-------------+--------+------------+
+| empid | name    | designation | salary | joindate   |
++-------+---------+-------------+--------+------------+
+|     1 | sumi    | finance     |   5000 | 2023-03-12 |
+|     2 | Hari    | Marketing   |   4000 | 2023-03-13 |
+|     3 | Trish   | finance     |   4100 | 2023-03-09 |
+|     4 | Shabari | Marketing   |   4000 | 2023-02-04 |
+|     6 | Sai     | Marketing   |   6000 | 2023-02-08 |
+|     7 | Santa   | Marketing   |   3400 | 2023-02-01 |
+|     8 | Meg     | Marketing   |   3400 | 2023-02-08 |
+|     9 | Kash    | finance     |   3400 | 2023-02-16 |
+|    10 | karthi  | Marketing   |   4400 | 2023-02-15 |
++-------+---------+-------------+--------+------------+
+9 rows in set (0.00 sec)
+
+mysql> select *from empdetails order by empid desc;
++-------+---------+-------------+--------+------------+
+| empid | name    | designation | salary | joindate   |
++-------+---------+-------------+--------+------------+
+|    10 | karthi  | Marketing   |   4400 | 2023-02-15 |
+|     9 | Kash    | finance     |   3400 | 2023-02-16 |
+|     8 | Meg     | Marketing   |   3400 | 2023-02-08 |
+|     7 | Santa   | Marketing   |   3400 | 2023-02-01 |
+|     6 | Sai     | Marketing   |   6000 | 2023-02-08 |
+|     4 | Shabari | Marketing   |   4000 | 2023-02-04 |
+|     3 | Trish   | finance     |   4100 | 2023-03-09 |
+|     2 | Hari    | Marketing   |   4000 | 2023-03-13 |
+|     1 | sumi    | finance     |   5000 | 2023-03-12 |
++-------+---------+-------------+--------+------------+
+9 rows in set (0.00 sec)
+
+mysql> seledt * from empdetails where designation ='Marketing' and salary <50000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'seledt * from empdetails where designation ='Marketing' and salary <50000' at line 1
+mysql> select * from empdetails where degination ='finance' and salary < 50000;
+ERROR 1054 (42S22): Unknown column 'degination' in 'where clause'
+mysql> select * from empdetails where designation ='finance' and salary < 50000;
++-------+-------+-------------+--------+------------+
+| empid | name  | designation | salary | joindate   |
++-------+-------+-------------+--------+------------+
+|     1 | sumi  | finance     |   5000 | 2023-03-12 |
+|     3 | Trish | finance     |   4100 | 2023-03-09 |
+|     9 | Kash  | finance     |   3400 | 2023-02-16 |
++-------+-------+-------------+--------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from empdetails where designation ='finance' and salary > 50000;
+Empty set (0.00 sec)
+
+mysql> select* from empdetails;
++-------+---------+-------------+--------+------------+
+| empid | name    | designation | salary | joindate   |
++-------+---------+-------------+--------+------------+
+|     1 | sumi    | finance     |   5000 | 2023-03-12 |
+|     2 | Hari    | Marketing   |   4000 | 2023-03-13 |
+|     3 | Trish   | finance     |   4100 | 2023-03-09 |
+|     4 | Shabari | Marketing   |   4000 | 2023-02-04 |
+|     6 | Sai     | Marketing   |   6000 | 2023-02-08 |
+|     7 | Santa   | Marketing   |   3400 | 2023-02-01 |
+|     8 | Meg     | Marketing   |   3400 | 2023-02-08 |
+|     9 | Kash    | finance     |   3400 | 2023-02-16 |
+|    10 | karthi  | Marketing   |   4400 | 2023-02-15 |
++-------+---------+-------------+--------+------------+
+9 rows in set (0.00 sec)
+
+mysql> select name,designation,joindate
+    -> from empdetails
+    -> where designation= 'finance'and joindate>2023-03-12
+    -> order by joindate desc;
++-------+-------------+------------+
+| name  | designation | joindate   |
++-------+-------------+------------+
+| sumi  | finance     | 2023-03-12 |
+| Trish | finance     | 2023-03-09 |
+| Kash  | finance     | 2023-02-16 |
++-------+-------------+------------+
+3 rows in set, 1 warning (0.04 sec)
+
+mysql>
