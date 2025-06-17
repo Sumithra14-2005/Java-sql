@@ -1,0 +1,104 @@
+mysql> use kgisl;
+Database changed
+mysql> create table studetails(
+    -> stuname varchar(20),
+    -> stumarks int
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> INSERT INTO studetails (stuname,stumarks)
+    -> VALUES('Sumithra',70),
+    -> VALUES('Harismitha',75),
+    -> VALUES('Hema',76);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'VALUES('Harismitha',75),
+VALUES('Hema',76)' at line 3
+mysql> INSERT INTO studetails (stuname,stumarks)values
+    -> ('Sumithra',70),
+    -> ('Harismitha',75),
+    -> ('Hema',76);
+Query OK, 3 rows affected (0.05 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select* from
+    -> studetails;
++------------+----------+
+| stuname    | stumarks |
++------------+----------+
+| Sumithra   |       70 |
+| Harismitha |       75 |
+| Hema       |       76 |
++------------+----------+
+3 rows in set (0.00 sec)
+mysql> use kgisl;
+Database changed
+mysql> create table studetails(
+    -> stuname varchar(20),
+    -> stumarks int
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> INSERT INTO studetails (stuname,stumarks)
+    -> VALUES('Sumithra',70),
+    -> VALUES('Harismitha',75),
+    -> VALUES('Hema',76);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'VALUES('Harismitha',75),
+VALUES('Hema',76)' at line 3
+mysql> INSERT INTO studetails (stuname,stumarks)values
+    -> ('Sumithra',70),
+    -> ('Harismitha',75),
+    -> ('Hema',76);
+Query OK, 3 rows affected (0.05 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select* from
+    -> studetails;
++------------+----------+
+| stuname    | stumarks |
++------------+----------+
+| Sumithra   |       70 |
+| Harismitha |       75 |
+| Hema       |       76 |
++------------+----------+
+3 rows in set (0.00 sec)
+mysql> use kgisl;
+Database changed
+mysql> create table studetails(
+    -> stuname varchar(20),
+    -> stumarks int
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> INSERT INTO studetails (stuname,stumarks)
+    -> VALUES('Sumithra',70),
+    -> VALUES('Harismitha',75),
+    -> VALUES('Hema',76);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'VALUES('Harismitha',75),
+VALUES('Hema',76)' at line 3
+mysql> INSERT INTO studetails (stuname,stumarks)values
+    -> ('Sumithra',70),
+    -> ('Harismitha',75),
+    -> ('Hema',76);
+Query OK, 3 rows affected (0.05 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select* from
+    -> studetails;
++------------+----------+
+| stuname    | stumarks |
++------------+----------+
+| Sumithra   |       70 |
+| Harismitha |       75 |
+| Hema       |       76 |
++------------+----------+
+3 rows in set (0.00 sec)
+mysql> select*
+    -> from studetails
+    -> where stumarks>80;
++------------+----------+
+| stuname    | stumarks |
++------------+----------+
+| Harismitha |       98 |
++------------+----------+
+1 row in set (0.00 sec)
+
+
