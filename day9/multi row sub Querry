@@ -1,0 +1,13 @@
+mysql> select dname
+    -> from dept
+    -> where deptno  IN (select deptno
+    -> from emp
+    -> where ename IN ('smith','allen')
+    -> );
++----------+
+| dname    |
++----------+
+| RESEARCH |
+| SALES    |
++----------+
+2 rows in set (0.04 sec)
